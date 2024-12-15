@@ -10,7 +10,7 @@
 <!-- Header -->
 <header>
     <section class="container header">
-        <table >
+        <table>
             <tr>
                 <!-- Logo -->
                 <td style="text-align: left;">
@@ -19,9 +19,9 @@
                 <!-- Navigation -->
                 <td style="text-align: center;">
                     <nav>
-                        <a href="#studio" >Studio</a>
-                        <a href="#portfolio" >Portfolio</a>
-                        <a href="#contacts" >Contacts</a>
+                        <a href="#studio">Studio</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#contacts">Contacts</a>
                     </nav>
                 </td>
                 <!-- Contact Info -->
@@ -38,16 +38,31 @@
 <section class="hero">
     <div class="hero-content">
         <h1>Effective Solutions <br> for Your Business</h1>
-        <button class="order-btn">Order Service</button>
+        <button class="order-btn" id="openModalBtn">Order Service</button>
     </div>
 </section>
 
-
+<!-- Modal (hidden by default) -->
+<div id="orderModal" class="modal-backdrop">
+    <div class="modal">
+        <button class="close-btn" id="closeModalBtn">&times;</button>
+        <h2>Order Service</h2>
+        <form id="orderForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
 
 <!-- Services Section -->
 <section class="services">
     <div class="container">
-        <table >
+        <table>
             <tr>
                 <td class="service">
                     <h3>Strategy</h3>
@@ -145,5 +160,25 @@
     <p>WEBSTUDIO</p>
     <p>Increase the flow of customers and sales for your business with digital marketing & growth solutions.</p>
 </footer>
+
+<script>
+    // Open modal
+    document.getElementById('openModalBtn').onclick = function() {
+        document.getElementById('orderModal').classList.add('is-open');
+    }
+
+    // Close modal
+    document.getElementById('closeModalBtn').onclick = function() {
+        document.getElementById('orderModal').classList.remove('is-open');
+    }
+
+    // Close modal if clicked outside of it
+    window.onclick = function(event) {
+        if (event.target === document.getElementById('orderModal')) {
+            document.getElementById('orderModal').classList.remove('is-open');
+        }
+    }
+</script>
+
 </body>
 </html>

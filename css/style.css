@@ -42,16 +42,16 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-    background: url('../images/office.png') no-repeat center center/cover; /* Adjust the path to your image */
+    background: url('../images/office.png') no-repeat center center/cover;
     background-size: cover;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
-    height: 500px; /* Adjust height as needed */
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.8; /* Make the background slightly transparent */
+    opacity: 0.8;
 }
 
 .hero-content {
@@ -75,239 +75,82 @@ nav a:hover {
     background-color: #00278f;
 }
 
-/* Services Section */
-.services {
-    background-color: #fff;
-    padding: 50px 0;
-}
-
-.services .container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.services table {
+/* Modal Styles */
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.services .service {
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9; /* Light background color for the box */
-    border: 1px solid #ddd; /* Grey border around the box */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 20px; /* Space between boxes */
-}
-
-.services .service h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.services .service p {
-    color: #666;
-}
-
-/* Team Section */
-.team {
-    background-color:#F4F4FD;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.team h2 {
-    margin-bottom: 30px;
-}
-
-.team table {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.team .team-member {
-    padding: 20px;
-    text-align: center;
-}
-
-.team .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.team .team-member h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.team .team-member p {
-    color: #666;
-}
-
-/* Portfolio Section */
-.portfolio {
-    background-color: #fff;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.portfolio h2 {
-    margin-bottom: 30px;
-}
-
-.portfolio table {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.portfolio .portfolio-item {
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #ddd; /* Grey border at the bottom */
-}
-
-.portfolio .portfolio-item img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.portfolio .portfolio-item h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.portfolio .portfolio-item p {
-    color: #666;
-}
-
-/* Footer */
-footer {
-    background-color: #2E2F42;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-/* Global style reset for margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Flexbox and container helpers */
-.container {
-    width: 1158px;
-    margin: 0 auto;
-}
-
-section {
-    padding: 10px 0; /* Üst ve alt padding */
-}
-
-header {
-    border-bottom: 2px solid #000; /* Başlık alt kenarlığı */
-}
-
-/* Flexbox usage in header, nav, and sections */
-header, nav, section ul {
+.modal-backdrop.is-open {
     display: flex;
-    justify-content: space-between; /* Yatayda düzenlemek için */
+    opacity: 1;
 }
 
-header, nav {
-    flex-direction: row;
-}
-
-/* Portfolio cards and team member styles */
-.portfolio-card {
-    border-bottom: 2px solid #000; /* Yalnızca alt kenarlık */
-}
-
-.team .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-.portfolio .portfolio-item img {
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
     width: 100%;
-    max-height: 250px;
-    object-fit: cover;
+    position: relative;
+    animation: fadeIn 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-    .container {
-        width: 90%;
-    }
-
-    header, nav, section ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .portfolio .portfolio-item img {
-        max-height: 200px;
-    }
-
-    .team .team-member img {
-        width: 130px;
-        height: 130px;
-    }
+.modal h2 {
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    header, nav, section ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .services .service {
-        margin-bottom: 20px;
-    }
-
-    .team .team-member img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .portfolio .portfolio-item img {
-        max-height: 180px;
-    }
+.modal input, .modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 24px;
-    }
+.modal button[type="submit"] {
+    background-color: #4D5AE5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
 
-    .hero .order-btn {
-        width: 100%;
-        padding: 12px 0;
-    }
+.modal button[type="submit"]:hover {
+    background-color: #00278f;
+}
 
-    .services .service h3 {
-        font-size: 18px;
-    }
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #aaa;
+}
 
-    .portfolio .portfolio-item img {
-        max-height: 150px;
-    }
+.close-btn:hover {
+    color: #000;
+}
 
-    .team .team-member img {
-        width: 100px;
-        height: 100px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
